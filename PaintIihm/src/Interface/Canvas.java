@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 public class Canvas extends JPanel {
 
     ArrayList<MonPoint> listePoint;
-    int taillePoint = 20;
+    int taillePoint = 16;
 
     public Canvas() {
         // ppté canvas

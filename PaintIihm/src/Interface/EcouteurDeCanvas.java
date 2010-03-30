@@ -44,7 +44,6 @@ public class EcouteurDeCanvas extends MouseInputAdapter {
     public void mouseReleased(MouseEvent e) {
         super.mouseReleased(e);
         Point p = e.getPoint();
-        System.out.println("before " + p);
         if (p.x - can.taillePoint / 2 < 0) {
             p.x = can.taillePoint / 2;
         }
@@ -57,8 +56,6 @@ public class EcouteurDeCanvas extends MouseInputAdapter {
         if (p.y + can.taillePoint / 2 > can.getHeight()) {
             p.y = can.getHeight() - can.taillePoint / 2;
         }
-        System.out.println("after " + p);
-
         can.ajouterPoint(p);
         can.repaint();
     }
