@@ -1,9 +1,4 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
  * Principal.java
  *
  * Created on 29 mars 2010, 13:59:56
@@ -18,15 +13,15 @@ import java.awt.BorderLayout;
  */
 public class Principal extends javax.swing.JFrame {
 
-    Canvas c;
+    Canvas can;
 
     /** Creates new form Principal */
     public Principal() {
         initComponents();
 
-        c = new Canvas();
+        can = new Canvas();
         jPanelSupport.setLayout(new BorderLayout());
-        jPanelSupport.add(c, BorderLayout.CENTER);
+        jPanelSupport.add(can, BorderLayout.CENTER);
     }
 
     /** This method is called from within the constructor to
@@ -53,7 +48,7 @@ public class Principal extends javax.swing.JFrame {
         jToolBar1.setMaximumSize(new java.awt.Dimension(100, 25));
         jToolBar1.setMinimumSize(new java.awt.Dimension(100, 25));
 
-        jLabel1.setText("Logiciel");
+        jLabel1.setText("Logiciel de dessin");
         jToolBar1.add(jLabel1);
 
         getContentPane().add(jToolBar1, java.awt.BorderLayout.PAGE_END);
@@ -68,7 +63,7 @@ public class Principal extends javax.swing.JFrame {
         );
         jPanelSupportLayout.setVerticalGroup(
             jPanelSupportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 380, Short.MAX_VALUE)
+            .addGap(0, 375, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanelSupport, java.awt.BorderLayout.CENTER);
@@ -100,8 +95,7 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItemRAZActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemRAZActionPerformed
-        // TODO add your handling code here:
-        c.remiseAZero();
+        can.remiseAZero();
     }//GEN-LAST:event_jMenuItemRAZActionPerformed
 
     /**
