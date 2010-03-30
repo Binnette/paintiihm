@@ -19,6 +19,7 @@ public class EcouteurDePoint extends MouseInputAdapter {
     State etat;
 
     public enum State {
+
         INIT, PRESSED, DRAGGED
     };
 
@@ -42,9 +43,9 @@ public class EcouteurDePoint extends MouseInputAdapter {
     @Override
     public void mouseDragged(MouseEvent e) {
         super.mouseDragged(e);
-        Point canv = monPoint.c.getLocationOnScreen() ;
-        canv.x += (int)(monPoint.dim.getWidth()/2);
-        canv.y += (int)(monPoint.dim.getHeight()/2);
+        Point canv = monPoint.can.getLocationOnScreen();
+        canv.x += (int) (monPoint.dim.getWidth() / 2);
+        canv.y += (int) (monPoint.dim.getHeight() / 2);
         Point fin = e.getLocationOnScreen();
 
         fin.x -= canv.x;
@@ -65,9 +66,9 @@ public class EcouteurDePoint extends MouseInputAdapter {
     @Override
     public void mouseReleased(MouseEvent e) {
         super.mouseReleased(e);
-        Point canv = monPoint.c.getLocationOnScreen() ;
-        canv.x += (int)(monPoint.dim.getWidth()/2);
-        canv.y += (int)(monPoint.dim.getHeight()/2);
+        Point canv = monPoint.can.getLocationOnScreen();
+        canv.x += (int) (monPoint.dim.getWidth() / 2);
+        canv.y += (int) (monPoint.dim.getHeight() / 2);
         Point fin = e.getLocationOnScreen();
         fin.x -= canv.x;
         fin.y -= canv.y;
@@ -86,16 +87,16 @@ public class EcouteurDePoint extends MouseInputAdapter {
         fin.x += monPoint.p.x;
         fin.y += monPoint.p.y;
         if (fin.x - monPoint.getWidth() / 2 < 0) {
-            fin.x = monPoint.getWidth()/2;
+            fin.x = monPoint.getWidth() / 2;
         }
         if (fin.y - monPoint.getHeight() / 2 < 0) {
             fin.y = monPoint.getHeight() / 2;
         }
-        if (fin.x + monPoint.getWidth() / 2 > monPoint.c.getWidth()) {
-            fin.x = monPoint.c.getWidth() - monPoint.getWidth() / 2;
+        if (fin.x + monPoint.getWidth() / 2 > monPoint.can.getWidth()) {
+            fin.x = monPoint.can.getWidth() - monPoint.getWidth() / 2;
         }
-        if (fin.y + monPoint.getHeight() / 2 > monPoint.c.getHeight()) {
-            fin.y = monPoint.c.getHeight() - monPoint.getHeight() / 2;
+        if (fin.y + monPoint.getHeight() / 2 > monPoint.can.getHeight()) {
+            fin.y = monPoint.can.getHeight() - monPoint.getHeight() / 2;
         }
 
     }

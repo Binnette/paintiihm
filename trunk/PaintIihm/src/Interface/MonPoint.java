@@ -2,7 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Interface;
 
 import java.awt.Color;
@@ -14,18 +13,20 @@ import javax.swing.JPanel;
  *
  * @author grandj
  */
-public class MonPoint extends JPanel{
-    Canvas c;
+public class MonPoint extends JPanel {
+
+    Canvas can;
     Point p;
     Dimension dim;
-    public MonPoint(Canvas c, Point pp){
-        this.c = c;
-        dim = new Dimension(20, 20);
+
+    public MonPoint(Canvas c, Point pp) {
+        this.can = c;
         this.setBackground(Color.BLACK);
+        dim = new Dimension(can.taillePoint, can.taillePoint);
         this.setSize(dim);
         setPoint(pp);
         //Ajout au canvas
-        c.add(this);
+        can.add(this);
         //ajout des écouteurs
         EcouteurDePoint e = new EcouteurDePoint(this);
         this.addMouseListener(e);
@@ -33,7 +34,7 @@ public class MonPoint extends JPanel{
         this.addMouseWheelListener(e);
     }
 
-    public void setPoint(Point pp){
+    public void setPoint(Point pp) {
         this.p = pp;
         int placeW = (int) (p.x - (dim.getWidth() / 2));
         int placeH = (int) (p.y - (dim.getHeight() / 2));
@@ -41,7 +42,6 @@ public class MonPoint extends JPanel{
         //System.out.println(pp);
         //this.setLocation(p.x - (int)dim.height, p.y - (int) dim.width);
         //this.setLocation(p.x , p.y );
-       //c.repaint();
+        //c.repaint();
     }
-
 }
