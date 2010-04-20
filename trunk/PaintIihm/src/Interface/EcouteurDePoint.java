@@ -61,6 +61,7 @@ public class EcouteurDePoint extends MouseInputAdapter {
                 pointInit = monPoint.getLocation();
                 break;
         }
+        monPoint.can.repaint();
     }
 
     @Override
@@ -79,6 +80,7 @@ public class EcouteurDePoint extends MouseInputAdapter {
                 monPoint.setPoint(fin);
                 break;
         }
+        monPoint.can.repaint();
     }
 
     public void calculPoint(Point fin) {

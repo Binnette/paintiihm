@@ -6,7 +6,6 @@ package Interface;
 
 import java.awt.Point;
 import java.awt.event.MouseEvent;
-import java.awt.geom.Line2D;
 import javax.swing.event.MouseInputAdapter;
 
 /**
@@ -31,7 +30,7 @@ public class EcouteurDeCanvas extends MouseInputAdapter {
     @Override
     public void mouseDragged(MouseEvent e) {
         super.mouseDragged(e);
-        if(courant != null){
+        if (courant != null) {
             courant.setCtrl(e.getPoint());
             can.repaint();
         }
@@ -82,6 +81,5 @@ public class EcouteurDeCanvas extends MouseInputAdapter {
 
         courant.setCtrl(p);
         can.repaint();
-
     }
 }

@@ -38,10 +38,12 @@ public class Canvas extends JPanel {
     }
 
     public void remiseAZero() {
+        MonPoint mp;
         for (int i = 0; i < listePoint.size(); i++) {
-            this.remove(listePoint.get(i));
+            mp = listePoint.get(i);
+            this.remove(mp.panelCtrl);
+            this.remove(mp);
         }
-
         listePoint.clear();
         this.repaint();
     }
@@ -104,8 +106,6 @@ public class Canvas extends JPanel {
     public void paint(Graphics g) {
         super.paint(g);
         Graphics2D d = (Graphics2D) g;
-        // effacer lignes
-        repaint();
         tracerLignes(d);
     }
 }
